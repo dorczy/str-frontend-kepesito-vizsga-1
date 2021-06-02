@@ -11,6 +11,6 @@ export class ContributorsService extends BaseService<Contributor> {
   constructor(
     public http: HttpClient,
   ) {
-    super(http, "https://api.github.com/repos/angular/angular/contributors?per_page=100");
+    super(http, "https://api.github.com/repos/angular/angular/contributors?per_page=75");
   }
 }
