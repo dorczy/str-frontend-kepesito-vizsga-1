@@ -9,7 +9,7 @@
     (scroll)="onScroll(div)">
 
     <app-contributor-card
-      *ngFor="let user of slicedArray"
+      *ngFor="let user of contributors"
         [avatar_url]="user.avatar_url"
         [login]="user.login"
         [html_url]="user.html_url"
