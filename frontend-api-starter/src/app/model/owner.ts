@@ -1,4 +1,4 @@
-export class Contributor {
+export class Owner {
   login: string = "";
   id: number = 0;
   node_id: string = "";
@@ -17,5 +17,4 @@ export class Contributor {
   received_events_url: string = "";
   type: string = "";
   site_admin: boolean = false;
-  contributions: number = 0;
-  }
+}

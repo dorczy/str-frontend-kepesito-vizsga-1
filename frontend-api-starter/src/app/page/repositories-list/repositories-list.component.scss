@@ -1,0 +1,24 @@
+.repositories {
+
+  &__container {
+    background-color: rgb(247, 247, 247);
+  }
+
+  &__header {
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
+
+.fa {
+  color: rgb(247, 67, 187);
+  text-decoration: none;
+  transition: all .5s ease;
+
+  &:hover {
+    color: rgb(167, 35, 123);
+    transition: all .5s ease;
+  }
+}

@@ -1,1 +1,24 @@
-<p>contributors works!</p>
+<div class="contributors__container p-4">
+
+  <h5 class="contributors__header">
+    Top Contributors
+  </h5>
+
+  <div class="contributors__body row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
+    #div
+    (scroll)="onScroll(div)">
+
+    <app-contributor-card
+      *ngFor="let user of slicedArray"
+        [avatar_url]="user.avatar_url"
+        [login]="user.login"
+        [html_url]="user.html_url"
+        [contributions]="user.contributions"
+      >
+    </app-contributor-card>
+
+  </div>
+
+</div>
+
+

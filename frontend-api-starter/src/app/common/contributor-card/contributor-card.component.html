@@ -1,0 +1,33 @@
+<div class="col mb-4">
+  <div class="card">
+
+    <div class="d-flex justify-content-between p-3">
+      <div class="d-flex align-items-end">
+        <img class="card-img-top"
+          [src]="[avatar_url]" [alt]="[login]">
+        <small class="text-muted">
+          <a [href]="html_url">@github</a>
+        </small>
+      </div>
+      <i class="fa fa-crosshairs fa-2x" aria-hidden="true"></i>
+    </div>
+
+    <div class="card-body">
+      <h6 class="card-title mb-1">
+        {{ login }}
+      </h6>
+      <p class="card-text">
+        {{ contributions }} commits
+      </p>
+    </div>
+
+    <div class="card-footer d-flex justify-content-center mb-3">
+      <button class="btn btn-sm btn-outline-primary"
+        [routerLink]="['repositories/' + login]">
+          VIEW REPOSITORIES
+      </button>
+    </div>
+
+  </div>
+</div>
+

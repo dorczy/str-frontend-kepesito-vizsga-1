@@ -1,0 +1,27 @@
+.card {
+  border: 0;
+
+  &-title {
+    font-weight: 700;
+  }
+  &-footer {
+    background-color: transparent;
+    border-top: 0;
+  }
+  &-img-top {
+    height: 4rem;
+    width: 4rem;
+    background-color: rgb(247, 247, 247);
+    padding: .3rem;
+    margin-right: .5rem;
+  }
+}
+
+.text-muted {
+
+  & > a {
+    font-size: .7rem;
+    text-decoration: none;
+    color: gray;
+  }
+}
