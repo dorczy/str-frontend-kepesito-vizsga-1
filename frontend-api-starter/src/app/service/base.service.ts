@@ -28,6 +28,10 @@ export class BaseService<T extends { id: number }> {
     return this.http.get<T[]>(`${this.url}?page=${page}&per_page=${perPage}`);
   }
 
+  getPerPageJSON(page: number, perPage: number): Observable<T[]> {
+    return this.http.get<T[]>(`${this.url}?_page=${page}&_limit=${perPage}`);
+  }
+
   getRepos(name: string): Observable<T[]> {
     return this.http.get<T[]>(`${this.url}/${name}/repos`);
   }

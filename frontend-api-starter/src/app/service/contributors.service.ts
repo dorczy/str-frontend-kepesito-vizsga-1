@@ -12,5 +12,6 @@ export class ContributorsService extends BaseService<Contributor> {
     public http: HttpClient,
   ) {
     super(http, "https://api.github.com/repos/angular/angular/contributors");
+    // super(http, "http://localhost:3000/users");
   }
 }
