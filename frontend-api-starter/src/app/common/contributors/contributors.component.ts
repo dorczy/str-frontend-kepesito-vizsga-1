@@ -37,7 +37,7 @@ export class ContributorsComponent implements OnInit {
 
     setTimeout(() => {
       this.slicedArray = this.contributors.slice(0, this.numberOfCurrentItems);
-    }, 500);
+    }, 800);
 
 
   }
