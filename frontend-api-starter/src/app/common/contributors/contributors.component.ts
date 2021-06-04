@@ -39,11 +39,16 @@ export class ContributorsComponent implements OnInit {
     this.toastr.error(message);
   }
 
-  onScroll(div: HTMLDivElement): void {
+  onScroll(event: Event): any {
+    const div = (event.target) as HTMLElement;
+
     const currentHeightOfElement = div.scrollHeight;
     const currentStartOfElement = div.scrollTop;
+    const clientHeight = div.clientHeight;
 
     const nextPageHeightLimit = currentHeightOfElement * (this.nextPagePercentLimit / 100);
+
+    const conditionOfRemove = currentHeightOfElement - clientHeight;
 
     if( currentStartOfElement >= nextPageHeightLimit ) {
       this.currentPage++;
@@ -58,9 +63,13 @@ export class ContributorsComponent implements OnInit {
           error => this.showError(error)
         );
     }
-    // if(this.numberOfCurrentItems === this.contributors.length) {
-    //   console.log("Vége! :)");
-    // }
+
+    if(currentStartOfElement === conditionOfRemove) {
+      console.log("End of the onScroll method.");
+      // div.removeEventListener("scroll", this.onScroll, true);
+      // delete this.onScroll(event);
+    }
+
   }
 
 }
