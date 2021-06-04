@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contributor } from 'src/app/model/contributor';
 import { ContributorsService } from 'src/app/service/contributors.service';
