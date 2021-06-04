@@ -5,8 +5,7 @@
   </h5>
 
   <div class="contributors__body row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
-    #div
-    (scroll)="onScroll(div)">
+    (scroll)="onScroll($event)">
 
     <app-contributor-card
       *ngFor="let user of slicedArray"

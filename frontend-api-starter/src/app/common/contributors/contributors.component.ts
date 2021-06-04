@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contributor } from 'src/app/model/contributor';
 import { ContributorsService } from 'src/app/service/contributors.service';
@@ -39,7 +39,6 @@ export class ContributorsComponent implements OnInit {
       this.slicedArray = this.contributors.slice(0, this.numberOfCurrentItems);
     }, 800);
 
-
   }
 
   ngOnInit(): void {
@@ -49,19 +48,28 @@ export class ContributorsComponent implements OnInit {
     this.toastr.error(message);
   }
 
-  onScroll(div: HTMLDivElement): void {
+  onScroll(event: Event): any {
+    const div = (event.target) as HTMLElement;
+
     const currentHeightOfElement = div.scrollHeight;
     const currentStartOfElement = div.scrollTop;
+    const clientHeight = div.clientHeight;
 
     const nextPageHeightLimit = currentHeightOfElement * (this.nextPagePercentLimit / 100);
+
+    const conditionOfRemove = currentHeightOfElement - clientHeight;
 
     if( currentStartOfElement >= nextPageHeightLimit ) {
       this.numberOfCurrentItems += this.itemsPerPage;
       this.slicedArray = this.contributors.slice(0, this.numberOfCurrentItems);
     }
-/*     if(this.numberOfCurrentItems === this.contributors.length) {
-      console.log("Vége! :)");
-    } */
+
+    if(currentStartOfElement === conditionOfRemove) {
+      console.log("End of the onScroll method.");
+      // div.removeEventListener("scroll", this.onScroll, true);
+      // delete this.onScroll(event);
+    }
+
   }
 
 }
